@@ -15,7 +15,7 @@ basic.forever(function () {
             X += -1
             led.plot(X, Y)
             led.plot(Y, X)
-            basic.pause(25)
+            basic.pause(15)
             led.plot(Y / 2, Y / 2)
             if (X + Y == 4) {
                 X += -1
@@ -31,7 +31,7 @@ basic.forever(function () {
             Y += 1
             led.plot(X, Y)
             led.plot(Y, X)
-            basic.pause(25)
+            basic.pause(20)
         }
     } else if (X == 0) {
         led.plot(Y / 2, Y / 2)
@@ -46,6 +46,7 @@ basic.forever(function () {
         }
     }
     if (led.point(0, 0) == true) {
+        basic.pause(500)
         basic.clearScreen()
         X = 4
         Y = 4
