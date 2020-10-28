@@ -8,14 +8,17 @@ basic.forever(function () {
                 X += -1
                 led.plot(X, Y)
                 led.plot(Y, X)
-                basic.pause(25)
+                basic.pause(100)
                 led.plot(X, X)
+                X += -1
+                led.plot(X, Y)
+                led.plot(Y, X)
             }
         } else if (X % Y != X % X) {
             X += -1
             led.plot(X, Y)
             led.plot(Y, X)
-            basic.pause(15)
+            basic.pause(100)
             led.plot(Y / 2, Y / 2)
             if (X + Y == 4) {
                 X += -1
@@ -31,7 +34,10 @@ basic.forever(function () {
             Y += 1
             led.plot(X, Y)
             led.plot(Y, X)
-            basic.pause(20)
+            Y += 1
+            led.plot(X, Y)
+            led.plot(Y, X)
+            Y += -1
         }
     } else if (X == 0) {
         led.plot(Y / 2, Y / 2)
@@ -43,6 +49,10 @@ basic.forever(function () {
             X += 1
             led.plot(X, Y)
             led.plot(Y, X)
+            X += 1
+            led.plot(X, Y)
+            led.plot(Y, X)
+            X += -1
         }
     }
     if (led.point(0, 0) == true) {
