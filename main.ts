@@ -1,64 +1,16 @@
-let X = 4
-let Y = 4
-led.plot(X, Y)
 basic.forever(function () {
-    if (X != 0) {
-        if (X % Y == X % X) {
-            if (led.point(X, Y) == true) {
-                X += -1
-                led.plot(X, Y)
-                led.plot(Y, X)
-                basic.pause(100)
-                led.plot(X, X)
-                X += -1
-                led.plot(X, Y)
-                led.plot(Y, X)
-            }
-        } else if (X % Y != X % X) {
-            X += -1
-            led.plot(X, Y)
-            led.plot(Y, X)
-            basic.pause(100)
-            led.plot(Y / 2, Y / 2)
-            if (X + Y == 4) {
-                X += -1
-                led.plot(X, Y)
-                led.plot(Y, X)
-                X += 1
-            }
+    for (let X = 0; X <= 4; X++) {
+        for (let Y = 0; Y <= X + 1; Y++) {
+            led.plot(4 - (X - Y), 0 + Y)
         }
-        for (let index = 0; index < 2; index++) {
-            Y += -1
-            led.plot(X, Y)
-            led.plot(Y, X)
-            Y += 1
-            led.plot(X, Y)
-            led.plot(Y, X)
-            Y += 1
-            led.plot(X, Y)
-            led.plot(Y, X)
-            Y += -1
-        }
-    } else if (X == 0) {
-        led.plot(Y / 2, Y / 2)
-        Y += -1
-        led.plot(Y, X)
-        led.plot(X, Y)
-        led.plot(Y, Y)
-        for (let index = 0; index < 2; index++) {
-            X += 1
-            led.plot(X, Y)
-            led.plot(Y, X)
-            X += 1
-            led.plot(X, Y)
-            led.plot(Y, X)
-            X += -1
-        }
-    }
-    if (led.point(0, 0) == true) {
         basic.pause(500)
-        basic.clearScreen()
-        X = 4
-        Y = 4
     }
+    for (let X = 0; X <= 5; X++) {
+        for (let Y = 0; Y <= X; Y++) {
+            led.plot(0 + Y, 4 - (X - Y))
+        }
+        basic.pause(500)
+    }
+    basic.clearScreen()
+    basic.clearScreen()
 })
